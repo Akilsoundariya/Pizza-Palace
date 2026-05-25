@@ -54,7 +54,7 @@ function Signup() {
       setLoading(true)
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://pizza-palace-h4kz.onrender.com/api/auth/register",
         {
           name,
           email,

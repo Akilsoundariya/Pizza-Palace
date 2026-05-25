@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { toast } from "react-toastify";
 import axios from "axios"
@@ -13,6 +13,12 @@ function Login() {
   const [loading, setLoading] = useState(false)
 
   const navigate = useNavigate()
+  useEffect(() => {
+
+  setEmail("")
+  setPassword("")
+
+}, [])
 
   const handleLogin = async (e) => {
 
@@ -33,7 +39,7 @@ function Login() {
       setLoading(true)
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://pizza-palace-h4kz.onrender.com/api/auth/login",
         {
           email,
           password
