@@ -10,9 +10,9 @@ const Menu = ({ cart, setCart }) => {
   useEffect(() => {
     const fetchPizzas = async () => {
       try {
-        const res = await axios.get(
-          "${import.meta.env.VITE_API_URL}/api/pizzas"
-        );
+      const res = await axios.get(
+  `${import.meta.env.VITE_API_URL}/api/pizzas`
+);
 
         setPizzaData(res.data.pizzas);
         console.log(res.data);
