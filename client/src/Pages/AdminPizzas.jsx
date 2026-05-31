@@ -19,9 +19,9 @@ const AdminPizzas = () => {
 
   const fetchPizzas = async () => {
     try {
-      const res = await axios.get(
-        '${import.meta.env.VITE_API_URL}/api/pizzas`
-      );
+   const res = await axios.get(
+  `${import.meta.env.VITE_API_URL}/api/pizzas`
+);
 
       setPizzas(res.data.pizzas);
     } catch (error) {
@@ -63,19 +63,12 @@ const AdminPizzas = () => {
       } else {
 
         await axios.post(
-          '${import.meta.env.VITE_API_URL}/api/pizzas`,
+          `${import.meta.env.VITE_API_URL}/api/pizzas`,
           formData
-        );
-
-        toast.success("Pizza Added Successfully 🍕");
-      }
-
-      setFormData({
-        name: "",
-        category: "Veg",
-        price: "",
-        image: "",
-      });
+        );await axios.post(
+  `${import.meta.env.VITE_API_URL}/api/pizzas`,
+  formData
+);
 
       fetchPizzas();
 
