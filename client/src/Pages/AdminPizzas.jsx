@@ -19,9 +19,9 @@ const AdminPizzas = () => {
 
   const fetchPizzas = async () => {
     try {
-   const res = await axios.get(
-  `${import.meta.env.VITE_API_URL}/api/pizzas`
-);
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/pizzas`
+      );
 
       setPizzas(res.data.pizzas);
     } catch (error) {
@@ -59,13 +59,21 @@ const AdminPizzas = () => {
 
         toast.success("Pizza Updated 🍕");
         setEditId(null);
-
       } else {
-
         await axios.post(
-  `${import.meta.env.VITE_API_URL}/api/pizzas`,
-  formData
-);
+          `${import.meta.env.VITE_API_URL}/api/pizzas`,
+          formData
+        );
+
+        toast.success("Pizza Added 🍕");
+      }
+
+      setFormData({
+        name: "",
+        category: "Veg",
+        price: "",
+        image: "",
+      });
 
       fetchPizzas();
 
@@ -205,4 +213,4 @@ const AdminPizzas = () => {
   );
 };
 
-export default AdminPizzas;
+export default AdminPizzas;git add .
