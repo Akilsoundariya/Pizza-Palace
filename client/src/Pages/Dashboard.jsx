@@ -16,7 +16,7 @@ const Dashboard = () => {
     const fetchStats = async () => {
       try {
         const res = await axios.get(
-          '${import.meta.env.VITE_API_URL}/api/dashboard'
+          '${import.meta.env.VITE_API_URL}/api/dashboard`
         );
 
         setStats(res.data);
