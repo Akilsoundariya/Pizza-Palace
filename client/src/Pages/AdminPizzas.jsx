@@ -63,9 +63,6 @@ const AdminPizzas = () => {
       } else {
 
         await axios.post(
-          `${import.meta.env.VITE_API_URL}/api/pizzas`,
-          formData
-        );await axios.post(
   `${import.meta.env.VITE_API_URL}/api/pizzas`,
   formData
 );
