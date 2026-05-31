@@ -13,6 +13,8 @@ const Menu = ({ cart, setCart }) => {
       const res = await axios.get(
   `${import.meta.env.VITE_API_URL}/api/pizzas`
 );
+console.log("API URL:", import.meta.env.VITE_API_URL);
+console.log("Response:", res.data);
 
         setPizzaData(res.data.pizzas);
         console.log(res.data);
