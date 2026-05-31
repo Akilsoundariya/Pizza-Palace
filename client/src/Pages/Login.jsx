@@ -39,7 +39,7 @@ function Login() {
       setLoading(true)
 
       const res = await axios.post(
-        "https://pizza-palace-h4kz.onrender.com/api/auth/login",
+        `${import.meta.env.VITE_API_URL}/api/auth/login`,
         {
           email,
           password
@@ -72,13 +72,19 @@ function Login() {
 
       // SUCCESS LOGIN
 
-      toast.success(res.data.message)
+ toast.success(res.data.message)
 
-      localStorage.setItem("token", res.data.token)
+localStorage.setItem("token", res.data.token)
+localStorage.setItem("role", res.data.role)
+localStorage.setItem("email", email)
 
-      setLoading(false)
+setLoading(false)
 
-      navigate("/dashboard")
+if (res.data.role === "admin") {
+  navigate("/dashboard")
+} else {
+  navigate("/home")
+}
 
     } catch (error) {
 

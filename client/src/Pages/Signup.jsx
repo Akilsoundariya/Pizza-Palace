@@ -52,15 +52,14 @@ function Signup() {
     try {
 
       setLoading(true)
-
-      const res = await axios.post(
-        "https://pizza-palace-h4kz.onrender.com/api/auth/register",
-        {
-          name,
-          email,
-          password
-        }
-      )
+const res = await axios.post(
+  `${import.meta.env.VITE_API_URL}/api/auth/register`,
+  {
+    name,
+    email,
+    password
+  }
+)
 
       toast.success(res.data.message)
 

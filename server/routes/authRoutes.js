@@ -97,10 +97,11 @@ router.post("/login", async (req, res) => {
       "secretkey"
     )
 
-    res.json({
-      message: "Login Success",
-      token
-    })
+res.json({
+  message: "Login Success",
+  token,
+  role: user.role
+})
 
   } catch (error) {
 
